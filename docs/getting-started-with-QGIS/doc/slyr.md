@@ -8,10 +8,15 @@ SLYR is a QGIS plugin developed by [North Road](https://north-road.com/). SLYR e
 [SLYR documentation page](https://north-road.com/slyr/)
 
 Index
+* [Installing SLYR](#installation)
 * [Adding Lyr files to QGIS](#adding-lyr-files)
 * [Adding Mxd files to QGIS](#adding-mxd-files)
 * [Convertion and Extraction Tools](#conversion-and-extraction-tools)
-* [Installing SLYR](#installation)
+
+## Installation
+To install make sure you have an established QGIS profile by starting and closing QGIS then exectute this batchfile to install
+P:\corp\script_whse\python\Utility_Misc\Published\install_slyr\install_QGIS_SLYR.bat
+![Install](../images/slyr-install.gif)
 
 ## Adding lyr Files
 Once your licensed version of the SLYR plugin has been installed you can magicly load many ArcGIS document and layer files via drag-and-drop or from the browser panel. 
@@ -49,10 +54,6 @@ The SLYR Plugin also provides access to processing tools to help in conversion o
 - Convert ESRI style to QGIS style XML
 - Convert SXD to QGIS (2D)
 
-## Installation
-To install make sure you have an established QGIS profile by starting and closing QGIS then exectute this batchfile to install
-P:\corp\script_whse\python\Utility_Misc\Published\install_slyr\install_QGIS_SLYR.bat
-![Install](../images/slyr-install.gif)
 
 ---
 [Back to top](#SLYR-Plugin)
