@@ -8,14 +8,14 @@ Supported [Vector](https://gdal.org/drivers/vector/index.html) and [Raster](http
 
 ## Index
 
-* [Choosing the right way to add data](#choosing-the-right-way-to-add-data)
+* [Choosing the right way to add data](#choosing-the-best-way-to-add-data)
 
   * [Quick comparison of data loading methods](#quick-comparison-of-data-loading-methods)
   * [Which method should I use?](#which-method-should-i-use)
 
 * [Adding data to QGIS](#adding-data-to-qgis)
-
-  * [Adding local files](#adding-local-files)
+  
+  * [Adding data by dragging and dropping](#adding-data-using-drag-n-drop)
   * [Adding data using the Browser](#adding-data-using-the-browser)
   * [Adding data using Data Source Manager](#adding-data-using-data-source-manager)
   * [Adding data from Layer Library](#adding-data-from-layer-library)
@@ -50,11 +50,12 @@ Supported [Vector](https://gdal.org/drivers/vector/index.html) and [Raster](http
   * [Joining data by location](#joining-data-by-location)
 
 * [Common issues and troubleshooting](#common-issues-and-troubleshooting)
- ### Choosing a method for adding layers
+  
+ ## Choosing the best way to add data
 
 QGIS provides several ways to add layers to a project. These methods can overlap, but each one is useful for a different type of workflow. The table below focuses on adding existing layers to QGIS.
 
-#### General ways to add layers
+### General ways to add layers
 
 | Method              | Best used for                                                                                           | Notes                                                                                                                              |
 | ------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -63,7 +64,7 @@ QGIS provides several ways to add layers to a project. These methods can overlap
 | Data Source Manager Ctrl+Shift+L/Ctrl+O) | Adding data through a guided interface organized by source type                                         | Useful when adding vector, raster, delimited text, database, or web service layers from one dialog.                                |
 | DB Manager          | Adding or creating layers from database tables and SQL queries                                          | Useful for database workflows where you need to inspect tables, run SQL, or create query layers before adding them to the project. |
 
-#### Ways to add BCGW data
+### Ways to add BCGW data
 
 | Method              | Best used for                                                        | Notes                                                                                              |
 | ------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -75,8 +76,61 @@ QGIS provides several ways to add layers to a project. These methods can overlap
 **Note: The Browser can be opened as a panel in the main QGIS interface or as a tab inside Data Source Manager.
 
 ## Adding data to QGIS
-QGIS supports multiple ways to add data to your map.  Most file based formats you can drag n'drop onto the map.  Otherwise you can use:
-* [Browser panel](https://docs.qgis.org/testing/en/docs/user_manual/managing_data_source/opening_data.html#the-browser-panel)
+
+### Drag and Drop
+
+### Adding data using the Browser
+
+Use the Browser for quick access to files, folders, databases, GeoPackages, and services.
+
+Open the Browser from:
+
+```text
+View > Panels > Browser
+```
+
+or:
+
+```text
+Ctrl+2
+```
+
+You can also use the **Browser** tab inside **Data Source Manager**.
+
+To add data: browse to the data source > right-click the layer > select **Add Layer to Project**.
+
+![Screenshot: adding data from the Browser](../images/qgis-browser-panel-add-layer.png)
+
+The Browser is usually the fastest option when you already know where the data is located.
+
+### Adding data using Data Source Manager
+
+Use **Data Source Manager** when you want to add data by source type, such as vector, raster, delimited text, GeoPackage, database, or web service data.
+
+Open Data Source Manager from:
+
+```text
+Layer > Data Source Manager
+```
+
+or use the **Data Source Manager** toolbar icon:
+
+![Data Source Manager toolbar icon](../images/qgis-data-source-manager-icon.png)
+
+Keyboard shortcuts:
+
+```text
+Ctrl+L or Ctrl+Shift+O
+```
+
+To add data: choose the source type > connect to or browse to the data source > select the layer or table > click **Add**.
+
+![Screenshot: Data Source Manager](../images/qgis-data-source-manager.png)
+
+Data Source Manager organizes different loading options in one place. Later sections use it for more specific workflows, including database and web service connections.
+
+### Adding local files
+
 
 You can add data from ArcGIS online feature service.  BC MapHub feature services can be accessed with this URL https://maps.gov.bc.ca/arcserver/rest/services/mpcm/bcgwpub/MapServer/
 
