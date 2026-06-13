@@ -2,21 +2,77 @@
 
 [Home](../README.md)
 
-QGIS supports many types of data.  The native format for QGIS is the Geopackage(.gpkg).  A Geopackage is just a SQLite database container with a standard schema governed by the OGC [Specification](http://docs.opengeospatial.org/is/18-000/18-000.html).  QGIS also provides excellent support of the Shapefile format.
+QGIS supports many types of data.  The native format for QGIS is the Geopackage(.gpkg).  A Geopackage is just a SQLite database container with a standard schema governed by the OGC [Specification](http://docs.opengeospatial.org/is/18-000/18-000.html).  QGIS also provides excellent support of the Shapefile **(.shp)** format.
 
 Supported [Vector](https://gdal.org/drivers/vector/index.html) and [Raster](https://gdal.org/drivers/raster/index.html) Formats
 
-Index
+## Index
+
+* [Choosing the right way to add data](#choosing-the-right-way-to-add-data)
+
+  * [Quick comparison of data loading methods](#quick-comparison-of-data-loading-methods)
+  * [Which method should I use?](#which-method-should-i-use)
+
 * [Adding data to QGIS](#adding-data-to-qgis)
-* [Adding data from layer library](#adding-data-from-layer-library)
-* [Adding Oracle data via browser panel](#adding-oracle-data-via-browser-panel)
-* [Adding Oracle Data via DB Manager](#adding-oracle-data-via-db-manager)
-* [Create New Vector Layers](#create-new-vector-layers)
-* [Select by location](#select-by-location)
-* [Create grids and samples](#create-grids-and-samples)
-* [Joining Data](#joining-data)
 
+  * [Adding local files](#adding-local-files)
+  * [Adding data using the Browser](#adding-data-using-the-browser)
+  * [Adding data using Data Source Manager](#adding-data-using-data-source-manager)
+  * [Adding data from Layer Library](#adding-data-from-layer-library)
 
+* [Adding database layers](#adding-database-layers)
+
+  * [Adding Oracle data using the Browser panel](#adding-oracle-data-using-the-browser-panel)
+  * [Adding Oracle data using Data Source Manager](#adding-oracle-data-using-data-source-manager)
+  * [Adding Oracle data using DB Manager](#adding-oracle-data-using-db-manager)
+  * [Choosing between Browser, Data Source Manager, and DB Manager](#choosing-between-browser-data-source-manager-and-db-manager)
+
+* [Working with vector layers](#working-with-vector-layers)
+
+  * [Creating new vector layers](#creating-new-vector-layers)
+  * [Editing vector layers](#editing-vector-layers)
+  * [Saving and exporting vector layers](#saving-and-exporting-vector-layers)
+
+* [Selecting and filtering data](#selecting-and-filtering-data)
+
+  * [Selecting features](#selecting-features)
+  * [Selecting by location](#selecting-by-location)
+  * [Filtering layers](#filtering-layers)
+  * [Exporting selected features](#exporting-selected-features)
+
+* [Creating new data with processing tools](#creating-new-data-with-processing-tools)
+
+  * [Creating grids and samples](#creating-grids-and-samples)
+
+* [Joining and combining data](#joining-and-combining-data)
+
+  * [Joining data by attributes](#joining-data-by-attributes)
+  * [Joining data by location](#joining-data-by-location)
+
+* [Common issues and troubleshooting](#common-issues-and-troubleshooting)
+ ### Choosing a method for adding layers
+
+QGIS provides several ways to add layers to a project. These methods can overlap, but each one is useful for a different type of workflow. The table below focuses on adding existing layers to QGIS.
+
+#### General ways to add layers
+
+| Method              | Best used for                                                                                           | Notes                                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Drag and drop       | Quickly adding local files                                                                              | Useful when the file is already saved on your computer or a network drive and you know where it is located.                        |
+| Browser panel       | Browsing and adding files, folders, databases, GeoPackages, web services, projects, scripts, and models | Useful when you want to explore available resources before adding them to the map.                                                 |
+| Data Source Manager Ctrl+Shift+L/Ctrl+O) | Adding data through a guided interface organized by source type                                         | Useful when adding vector, raster, delimited text, database, or web service layers from one dialog.                                |
+| DB Manager          | Adding or creating layers from database tables and SQL queries                                          | Useful for database workflows where you need to inspect tables, run SQL, or create query layers before adding them to the project. |
+
+#### Ways to add BCGW data
+
+| Method              | Best used for                                                        | Notes                                                                                              |
+| ------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Layer Library       | Finding and adding commonly used B.C. government layers              | Best starting point when the layer is available through the curated Layer Library workflow.        |
+| Browser panel       | Adding known BCGW layers directly from the Oracle connection         | Useful when you know the schema or table name and want to browse the database connection directly. |
+| Data Source Manager | Adding BCGW database layers through a source-specific loading dialog | Useful when you want to add database layers through the Data Source Manager interface.             |
+| DB Manager          | Querying BCGW tables before adding them to the project               | Useful when you need to filter, subset, join, or run SQL before loading the result as a layer.     |
+
+**Note: The Browser can be opened as a panel in the main QGIS interface or as a tab inside Data Source Manager.
 
 ## Adding data to QGIS
 QGIS supports multiple ways to add data to your map.  Most file based formats you can drag n'drop onto the map.  Otherwise you can use:
