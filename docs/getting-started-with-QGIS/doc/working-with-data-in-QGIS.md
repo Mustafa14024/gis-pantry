@@ -99,7 +99,7 @@ You can also use the **Browser** tab inside **Data Source Manager**.
 
 To add data: browse to the data source > right-click the layer > select **Add Layer to Project**.
 
-<img src="../../../images/qgis-browser-panel-add-layer.png" alt="Screenshot: adding data from the Browser" width="400">
+<img src="../../../images/qgis-browser-panel-add-layer.png" alt="Screenshot: adding data from the Browser" height = "400" width="400">
 
 The Browser is usually the fastest option when you already know where the data is located.
 
