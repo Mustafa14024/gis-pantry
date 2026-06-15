@@ -25,31 +25,7 @@ Supported [Vector](https://gdal.org/drivers/vector/index.html) and [Raster](http
   * [Adding Oracle data using the Browser panel](#adding-oracle-data-using-the-browser-panel)
   * [Adding Oracle data using Data Source Manager](#adding-oracle-data-using-data-source-manager)
   * [Adding Oracle data using DB Manager](#adding-oracle-data-using-db-manager)
-  * [Choosing between Browser, Data Source Manager, and DB Manager](#choosing-between-browser-data-source-manager-and-db-manager)
-
-* [Working with vector layers](#working-with-vector-layers)
-
-  * [Creating new vector layers](#creating-new-vector-layers)
-  * [Editing vector layers](#editing-vector-layers)
-  * [Saving and exporting vector layers](#saving-and-exporting-vector-layers)
-
-* [Selecting and filtering data](#selecting-and-filtering-data)
-
-  * [Selecting features](#selecting-features)
-  * [Selecting by location](#selecting-by-location)
-  * [Filtering layers](#filtering-layers)
-  * [Exporting selected features](#exporting-selected-features)
-
-* [Creating new data with processing tools](#creating-new-data-with-processing-tools)
-
-  * [Creating grids and samples](#creating-grids-and-samples)
-
-* [Joining and combining data](#joining-and-combining-data)
-
-  * [Joining data by attributes](#joining-data-by-attributes)
-  * [Joining data by location](#joining-data-by-location)
-
-* [Common issues and troubleshooting](#common-issues-and-troubleshooting)
+    
   
  ## Choosing the best way to add data
 
@@ -61,7 +37,7 @@ QGIS provides several ways to add layers to a project. These methods can overlap
 | ------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | Drag and drop       | Quickly adding local files                                                                              | Useful when the file is already saved on your computer or a network drive and you know where it is located.                        |
 | Browser panel       | Browsing and adding files, folders, databases, GeoPackages, web services, projects, scripts, and models | Useful when you want to explore available resources before adding them to the map.                                                 |
-| Data Source Manager Ctrl+Shift+L/Ctrl+O) | Adding data through a guided interface organized by source type                                         | Useful when adding vector, raster, delimited text, database, or web service layers from one dialog.                                |
+| Data Source Manager (Ctrl+Shift+L/Ctrl+O) | Adding data through a guided interface organized by source type                                         | Useful when adding vector, raster, delimited text, database, or web service layers from one dialog.                                |
 | DB Manager          | Adding or creating layers from database tables and SQL queries                                          | Useful for database workflows where you need to inspect tables, run SQL, or create query layers before adding them to the project. |
 
 ### Ways to add BCGW data
@@ -107,30 +83,19 @@ The Browser is usually the fastest option when you already know where the data i
 
 Use **Data Source Manager** when you want to add data by source type, such as vector, raster, delimited text, GeoPackage, database, or web service data.
 
-Open Data Source Manager from:
-
-```text
-Layer > Data Source Manager
-```
-
-or use the **Data Source Manager** toolbar icon:
-
-![Data Source Manager toolbar icon](../images/qgis-data-source-manager-icon.png)
-
-Keyboard shortcuts:
-
-```text
-Ctrl+L or Ctrl+Shift+O
-```
+Open **Data Source Manager** from `Layer > Data Source Manager`, or use the Data Source Manager toolbar icon <img src="../../../images/qgis-data-source-manager-icon.png" alt="Data Source Manager toolbar icon" width="24">.
+Keyboard shortcuts: *Ctrl+L* or *Ctrl+Shift+O*
 
 To add data: choose the source type > connect to or browse to the data source > select the layer or table > click **Add**.
 
-![Screenshot: Data Source Manager](../images/qgis-data-source-manager.png)
-
 Data Source Manager organizes different loading options in one place. Later sections use it for more specific workflows, including database and web service connections.
 
-### Adding local files
+### Adding data from Layer Library
 
+The BCGOV layer library provides standardized style and data definitions for corporate datasets. Once [SLYR is installed](slyr.md), add the location of the BCGov Corporate Layer Library to your favorites, navigate through the folder categories, right click the layer and choose *Add selected layer(s) to project*
+
+
+![Add Layer to project](../images/slyr-add-lyr.gif "Add ESRI Layer to project")
 
 You can add data from ArcGIS online feature service.  BC MapHub feature services can be accessed with this URL https://maps.gov.bc.ca/arcserver/rest/services/mpcm/bcgwpub/MapServer/
 
@@ -138,15 +103,8 @@ In the browser panel right click on the Add ESRI Feature service and create new
 
 ![Add Feature Service](../images/add_arcgisonline_feature_server_data.gif "Wow!")
 
-
-## Adding data from layer library
-The BCGOV layer library provides standardized style and data definitions for corporate datasets. Once [SLYR is installed](slyr.md), add the location of the BCGov Corporate Layer Library to your favorites, navigate through the folder categories, right click the layer and choose *Add selected layer(s) to project*
-
-
-![Add Layer to project](../images/slyr-add-lyr.gif "Add ESRI Layer to project")
-
-
-## Adding Oracle data via browser panel
+## Adding database layers
+### Adding Oracle data via browser panel
 With the Browser panel open right-click the ![Oracle Icon](../images/oracle-browser-icon.PNG "Oracle Browser Icon") and click *New Connection....*
 
 Chances are you will want to add the BCGW database. From the GTS, enter the following:
@@ -159,7 +117,7 @@ Find your new connection and expand the contents so you can choose the table you
 
 > **_NOTE:_** The Oracle connection can be quite slow sometimes taking a few minutes to display all the data and tables in the system. Be patient. <br> <br> To avoid retrieving tables each time you open QGIS, load tables from the **Data Source Manager** (CTRL+SHIFT+O). This also allows for choosing a primary key, as QGIS will occasionally default to the wrong column when loading from the browsler panel, producing a "Layer is not valid" error.
 
-## Adding Oracle Data via DB Manager
+### Adding Oracle Data via DB Manager
 Once you have established your oracle connection you can start DB Manager from the Database menu.  Select and connect to your Oracle database from the ![Oracle](../images/oracle-browser-icon.PNG) provider section. When you are connected you can expand the table list and right-click and choose *Add to project...*
 
  [QGIS Documentation](https://docs.qgis.org/testing/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html).
@@ -196,7 +154,8 @@ SDO_ANYINTERACT (GEOMETRY,
 >A handy tip for getting the extent of your analysis area - on the right, beside the coordinate box at the bottom of the QGIS window is a button that toggles the coordinate box between mouse coordinate location and map extent.  Toggle on the extent and click in the coordinates, ctrl-A, ctrl-C and paste it into your sql statement above.
 ![Toggle map extent coordinates](../images/get_map_extent.gif "Get map extent")
 
-## Create New Vector Layers
+## Working with vector layers
+### Create New Vector Layers
 [QGIS Documentation Link](https://docs.qgis.org/testing/en/docs/user_manual/managing_data_source/create_layers.html#id10)
 
 Be sure to check out:  
