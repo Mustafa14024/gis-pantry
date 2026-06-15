@@ -1,4 +1,4 @@
-# Working with data in QGIS
+# Adding data in QGIS
 
 [Home](../README.md)
 
