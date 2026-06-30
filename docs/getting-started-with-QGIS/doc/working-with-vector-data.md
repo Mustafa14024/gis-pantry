@@ -7,6 +7,10 @@
 
 
 ## Index
+* Create New Vector Layers
+* Select by location
+* Create grids and samples
+* Joining Data
 * [Creating new features](#Creating-new-features)
 * [Attribution](#Attribution)
 * [Add a field to a layer's attributes](#Add-a-field-to-layer-attributes)
@@ -17,6 +21,8 @@
 * [Tracing](#tracing)
 * [Reshaping](#reshaping)
 * [Edit in place](#edit-features-in-place)
+
+  
 ## Create New Vector Layers
 [QGIS Documentation Link](https://docs.qgis.org/testing/en/docs/user_manual/managing_data_source/create_layers.html#id10)
 
@@ -32,6 +38,7 @@ QGIS Documentation
 ## Select by location
 Select by location tool isn't found with the other selction tools. You can find select by location in the Vector menu under Research Tools.
 ![Select By Location](../images/select_by_location.gif "Select By Location")
+
 ## Create grids and samples
 You can find grid and sample creation tools in the Vector menu under Research Tools.
 ![Create Grid](../images/create_grid.gif "Create Grid ...")
