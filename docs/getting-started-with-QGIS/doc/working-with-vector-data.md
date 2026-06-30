@@ -7,10 +7,10 @@
 
 
 ## Index
-* Create New Vector Layers
-* Select by location
-* Create grids and samples
-* Joining Data
+* [Create New Vector Layers](Working_with_vector_data.md#create-new-vector-layers)
+* [Select by Location](Working_with_vector_data.md#select-by-location)
+* [Create Grids and Samples](Working_with_vector_data.md#create-grids-and-samples)
+* [Joining Data](Working_with_vector_data.md#joining-data)
 * [Creating new features](#Creating-new-features)
 * [Attribution](#Attribution)
 * [Add a field to a layer's attributes](#Add-a-field-to-layer-attributes)
