@@ -67,7 +67,7 @@ In QGIS data can be accessed either through local data sources on your computer 
 
    Note: This loads the service but does not set it up as a connection type in the browser.
 
-   ![QuickMapServices workflow](../../../images/QMS/QMS.gif)
+   ![QuickMapServices workflow](../../../images/QMS.gif)
 
    Additional user contributions of available web services around the world can be found at: https://github.com/nextgis/quickmapservices_contrib
   
