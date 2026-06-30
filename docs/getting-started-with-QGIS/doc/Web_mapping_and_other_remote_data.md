@@ -51,18 +51,23 @@ In QGIS data can be accessed either through local data sources on your computer 
    QGIS has a helpful plugin called Quick Map Services (QMS) that assists users in finding webservices through pre-defined plugin links. 
 
    To install and use the plugin: 
-   1. Plugins -> Manage and Install -> Search QMS and install the plugin.
-   2. Find the QMS toolbar.
+   1. Go to Plugins → Manage and Install Plugins.
+   2. Search for QuickMapServices and install NextGIS QuickMapServices.
+   3. Find the QuickMapServices toolbar or access it from Web → QuickMapServices.
+   4. Click the QuickMapServices icon and select Search QMS.
    
       ![QMSToolbar](../images/QMSToolbar.jpg)
 
-   3. Click the icon for QuickMapServices -> and select Settings.
-   4. Click the More Services tab and click the Get contributed pack. Click OK on the pop up, and SAve or Cancel to exit the window.
-   5. Click the QuickMapServices icon again and select a service to load.
+   5. Click the QuickMapServices icon and select Search QMS.
+   6.  In the search window, search for a basemap or service, such as OpenStreetMap, ESRI, Bing, or another available service.
+   7.  Select the service you want to use and click Add to load it into your map.
+   8.  To control which service groups appear in the QuickMapServices menu, go to QuickMapServices → Settings → Visibility.
+   9.  Check the service groups you want visible, then click OK or Save to exit the window.
+   10.  Click the QuickMapServices icon again and select a service to load it into the map.
 
    Note: This loads the service but does not set it up as a connection type in the browser.
 
-   ![Add WFS Service](../images/Quick_Map_Service.gif)
+   ![QuickMapServices workflow](../../../images/QMS/QMS.gif)
 
    Additional user contributions of available web services around the world can be found at: https://github.com/nextgis/quickmapservices_contrib
   
